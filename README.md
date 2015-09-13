@@ -1,6 +1,8 @@
 # Imagexpander
 
-#### A minimal fullscreen image zoom/expander script.
+##### A minimal fullscreen image zoom/expander script.
+
+![demo](https://raw.githubusercontent.com/cacheflowe/imagexpander/master/images/demo-sm.gif)
 
 ## Usage
 
