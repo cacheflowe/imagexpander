@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imagexpander</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta content="no" name="imagetoolbar" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="stylesheet" href="./vendor/normalize.css">
+    <link rel="stylesheet" href="./vendor/skeleton.css">
+    <link rel="stylesheet" href="./imagexpander.css">
+    <style>
+      html, body {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        background-color: #efefef;
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      .container {
+        max-width: 860px;
+        width: 90%;
+        margin-top: 40px;
+      }
+      img {
+        max-width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Imagexpander</h1>
+      <h5>A minimal fullscreen image zoom/expander script</h5>
+      <p>Simply add the .js and .css files to your poject, and add an <code>imagexpander</code> class to any image you'd like to expand on click. When an image is expanded, a subsequent click, window scroll or ESC key press will hide it.</p>
+      <p>Try the demo below by clicking or tapping an image:</p>
+      <div class="row">
+        <div class="six columns">
+          <p><img class="imagexpander" src="./images/11249975_810220532405085_329642920_n.jpg"></p>
+        </div>
+        <div class="six columns">
+          <p><img class="imagexpander" src="./images/11282752_1444924995821494_566816497_n.jpg"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <p><img class="imagexpander" src="./images/11821281_951066664952077_459250379_n.jpg"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <p><img class="imagexpander" src="./images/11199508_447919222036850_1903894485_n.jpg"></p>
+        </div>
+        <div class="nine columns">
+          <p><img class="imagexpander" src="./images/11296663_840014786095383_1135660888_n.jpg"></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
+          <p>Images borrowed from <a href="https://instagram.com/cacheflowe/">https://instagram.com/cacheflowe/</a></p>
+        </div>
+      </div>
+
+    </div>
+    <script src="./imagexpander.js"></script>
+  </body>
+</html>
