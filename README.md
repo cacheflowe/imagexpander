@@ -6,7 +6,7 @@
 
 ## Usage
 
-Simply add the .js and .css files to your poject, and add an `imagexpander` class to any image you'd like to expand on click. When an image is expanded, a subsequent click, window scroll or ESC key press will hide it.
+Simply add the .js and .css files to your project, and add an `imagexpander` class to any image you'd like to expand on click. When an image is expanded, a subsequent click, window scroll or ESC key press will hide it.
 
 If you'd rather cover the screen instead of letterbox, use the public method `window.imagexpander.setStyleCrop()`
 
