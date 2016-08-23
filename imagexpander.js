@@ -73,7 +73,7 @@
         if(img.getAttribute('data-imagexpander-large-src') != null) {
           img.src = img.getAttribute('data-imagexpander-large-src');
         }
-      }, 320);
+      }, 1000);
 
     }, 50);
   };
@@ -96,15 +96,27 @@
       _expandedImg.style.width = parseInt(shrinkSize[0]) + 'px';
       _expandedImg.style.maxWidth = parseInt(shrinkSize[0]) + 'px';
       _expandedImg.style.height = parseInt(shrinkSize[1]) + 'px';
-      console.log('shrinkTo: ', parseInt(shrinkSize[0]), parseInt(shrinkSize[1]));
+
       var expandedImg = _expandedImg;
       setTimeout(function(){
-        expandedImg.style.width = null;
-        expandedImg.style.maxWidth = null;
-        expandedImg.style.height = null;
-        expandedImg.parentNode.style.height = null;
-        expandedImg.removeAttribute('data-shrink-to')
-        document.body.style.overflowX = null;
+        // remove animations while we remove/reset styles
+        expandedImg.classList.add('imagexpander-immediate');
+        requestAnimationFrame(function(){
+          expandedImg.style.width = null;
+          expandedImg.style.maxWidth = null;
+          expandedImg.style.height = null;
+          expandedImg.parentNode.style.height = null;
+          expandedImg.removeAttribute('data-shrink-to')
+          document.body.style.overflowX = null;
+          // remove wrapper
+          expandedImg.parentNode.parentNode.appendChild(expandedImg);
+          var oldWrapper = expandedImg.parentNode.parentNode.querySelector('.imagexpander-wrapper');
+          oldWrapper.parentNode.removeChild(oldWrapper);
+          // add animations back
+          requestAnimationFrame(function(){
+            expandedImg.classList.remove('imagexpander-immediate');
+          });
+        });
       }, 320);
       window.removeEventListener('scroll', shrinkImage);
       window.removeEventListener('resize', shrinkImage);
