@@ -109,9 +109,8 @@
           expandedImg.removeAttribute('data-shrink-to')
           document.body.style.overflowX = null;
           // remove wrapper
-          expandedImg.parentNode.parentNode.appendChild(expandedImg);
           var oldWrapper = expandedImg.parentNode.parentNode.querySelector('.imagexpander-wrapper');
-          oldWrapper.parentNode.removeChild(oldWrapper);
+          expandedImg.parentNode.parentNode.replaceChild(expandedImg, oldWrapper);
           // add animations back
           requestAnimationFrame(function(){
             expandedImg.classList.remove('imagexpander-immediate');
